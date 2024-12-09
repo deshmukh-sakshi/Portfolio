@@ -1,0 +1,113 @@
+.card {
+  background: #1E1E1E; /* VS Code dark theme background */
+  border: 1px solid #3E3E42; /* Subtle border */
+  border-radius: 8px;
+  padding: 1.8rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #569CD6, #4EC9B0);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #569CD6;
+  box-shadow: 0 10px 30px rgba(86, 156, 214, 0.15);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.title {
+  font-size: 1.6rem;
+  color: #FFFFFF;
+  margin: 0;
+  font-weight: 600;
+  background: linear-gradient(90deg, #569CD6, #4EC9B0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+}
+
+.iconLink {
+  color: #569CD6;
+  font-size: 1.4rem;
+  transition: all 0.2s ease;
+  padding: 8px;
+  border-radius: 50%;
+  background: rgba(86, 156, 214, 0.1);
+}
+
+.iconLink:hover {
+  color: #4EC9B0;
+  background: rgba(86, 156, 214, 0.2);
+  transform: rotate(15deg);
+}
+
+.shortDescription {
+  color: #4EC9B0; /* VS Code teal */
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.description {
+  color: #D4D4D4; /* VS Code light text */
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+/* Add a subtle gradient overlay on hover */
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(86, 156, 214, 0.03),
+    rgba(78, 201, 176, 0.03)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.techStack {
+  display: none;
+}

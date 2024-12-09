@@ -1,0 +1,161 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.container > * {
+  flex: 1;
+}
+
+.container > div:first-child {
+  border-right: 1px solid var(--accent-color);
+}
+
+.container h1 {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+}
+
+.form input,
+.form textarea {
+  font-family: 'JetBrains Mono';
+  margin-bottom: 1.5rem;
+  background: var(--article-bg);
+  color: var(--text-color);
+  border: none;
+  font-size: 1rem;
+  padding: 0.75rem;
+  width: 100%;
+  resize: none;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: 1px solid var(--accent-color);
+}
+
+.form button {
+  background: var(--accent-color);
+  color: var(--main-bg);
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.heading {
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    display: block;
+  }
+  .container > div:first-child {
+    border-right: none;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .flex {
+    display: block;
+  }
+  .form input {
+    font-size: 0.85rem;
+  }
+}
+
+.codeContainer {
+  background: #1E1E1E;
+  border-radius: 8px;
+  padding: 1.5rem;
+  font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
+  overflow-x: auto;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.codeBlock {
+  margin: 0;
+  color: #D4D4D4;
+  line-height: 1.7;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+}
+
+.line {
+  display: block;
+  white-space: pre;
+  position: relative;
+  padding-left: 3rem;
+}
+
+.line::before {
+  content: counter(line);
+  counter-increment: line;
+  position: absolute;
+  left: 0;
+  color: #858585;
+  text-align: right;
+  width: 2rem;
+  padding-right: 1rem;
+  user-select: none;
+  opacity: 0.5;
+}
+
+.keyword {
+  color: #569CD6;
+  font-weight: 500;
+}
+
+.className {
+  color: #4EC9B0;
+  font-weight: 500;
+}
+
+.operator {
+  color: #D4D4D4;
+  margin: 0 0.3rem;
+}
+
+.property {
+  color: #9CDCFE;
+}
+
+.string {
+  color: #CE9178;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.string:hover {
+  color: #E6B89C;
+  text-decoration: underline;
+}
+
+.spacing {
+  display: inline-block;
+  white-space: pre;
+}
+
+/* Add hover effect to lines */
+.line:hover {
+  background: rgba(86, 156, 214, 0.05);
+}

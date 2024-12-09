@@ -1,0 +1,22 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Bharat Philately",
+      "image": "/projects/bharat-philately.jpg",
+      "description": "BHARAT PHILATELY - National Philatelic Community Platform. A centralized platform for philatelists across India to access, trade, and showcase rare stamps. Features include National Philatelic Deposit Account, real-time updates, auctions, and community forums.",
+      "shortDescription": "National Philatelic Community Platform",
+      "techStack": ["Next.js", "React", "Node.js", "MongoDB"],
+      "demo": "https://bharatphilately.vercel.app/"
+    },
+    {
+      "id": 2,
+      "title": "TRIRANG",
+      "image": "/projects/trirang.jpg",
+      "description": "A sustainable fashion platform that revolutionizes garment lifecycle management through an innovative hub connecting users, resources, and communities for textile recycling and reuse. Features include donation system, community workshops, and marketplace for second-hand sales.",
+      "shortDescription": "Sustainable Fashion Platform",
+      "techStack": ["React", "Node.js", "MongoDB", "Netlify"],
+      "demo": "https://trirang.netlify.app/"
+    }
+  ]
+}

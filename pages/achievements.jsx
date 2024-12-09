@@ -1,0 +1,177 @@
+import { useState } from 'react';
+import styles from '../styles/AchievementsPage.module.css';
+
+const Achievements = () => {
+  const [data] = useState({
+    academic: {
+      'Current CGPA': '9.45/10',
+      'B.Tech': 'Computer Engineering',
+      'Class X': '95% | Nirmal International School'
+    },
+    certifications: {
+      'Cisco Packet Tracer': {
+        name: 'Cisco Packet Tracer',
+        date: '2024',
+        issuer: 'Cisco',
+        link: 'https://cisco.com',
+        description: 'Network simulation and visualization tool certification'
+      },
+      'Gen AI': {
+        name: 'Google Gen AI',
+        date: '2024',
+        issuer: 'Google',
+        link: 'https://google.com',
+        description: 'Generative AI and machine learning fundamentals'
+      },
+      'Linux Fundamentals': {
+        name: 'Linux Fundamentals',
+        date: '2023',
+        issuer: 'Simplilearn',
+        link: 'https://simplilearn.com',
+        description: 'Core Linux system administration and command line skills'
+      },
+      'Web Development': {
+        name: 'Web Development',
+        date: '2023',
+        issuer: 'Udemy',
+        link: 'https://udemy.com',
+        description: 'Full-stack web development with modern technologies'
+      },
+      'Python Programming': {
+        name: 'Python Programming',
+        date: '2023',
+        issuer: 'Coursera',
+        link: 'https://coursera.org',
+        description: 'Advanced Python programming and application development'
+      }
+    },
+    awards: {
+      'LPF Scholarship': '(2023)',
+      'Maths Olympiad': 'Gold Medal (2018)',
+      'Nirmal Expo [Project Exhibition]': 'Best Project Award (2019)',
+      'Essay Writing Competition Winner': '(2021)',
+    }
+  });
+
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
+  const filterAchievements = (category, term) => {
+    if (category !== 'all' && category !== category) return false;
+    return JSON.stringify(data[category]).toLowerCase().includes(term.toLowerCase());
+  };
+
+  const calculateProgress = (value) => {
+    if (value.includes('/')) {
+      const [achieved, total] = value.split('/');
+      return (parseFloat(achieved) / parseFloat(total)) * 100;
+    }
+    if (value.includes('%')) {
+      return parseFloat(value);
+    }
+    return 100;
+  };
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.description}>
+        <h2>Achievements & Certifications</h2>
+        <p>
+          A collection of my academic accomplishments, professional certifications, and notable awards. 
+          Each achievement represents a milestone in my journey of continuous learning and growth in 
+          the field of technology and computer engineering.
+        </p>
+      </div>
+
+      <div className={styles.controls}>
+        <input
+          type="text"
+          placeholder="Search achievements..."
+          className={styles.searchBar}
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <div className={styles.filters}>
+          <button
+            className={`${styles.filterBtn} ${selectedCategory === 'all' ? styles.active : ''}`}
+            onClick={() => setSelectedCategory('all')}
+          >
+            All
+          </button>
+          {Object.keys(data).map((category) => (
+            <button
+              key={category}
+              className={`${styles.filterBtn} ${selectedCategory === category ? styles.active : ''}`}
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category.charAt(0).toUpperCase() + category.slice(1)}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className={styles.achievements}>
+        {Object.keys(data).map((category) => (
+          (selectedCategory === 'all' || selectedCategory === category) &&
+          filterAchievements(category, searchTerm) && (
+            <div key={category} className={styles.category}>
+              <h3>{category.charAt(0).toUpperCase() + category.slice(1)}</h3>
+              <div className={styles.cards}>
+                {Object.entries(data[category]).map(([key, value]) => (
+                  <div key={key} className={styles.card}>
+                    <div className={styles.cardInner}>
+                      <div className={styles.cardFront}>
+                        <h4>{key}</h4>
+                        {category === 'academic' && (
+                          <div className={styles.progressBar}>
+                            <div
+                              className={styles.progress}
+                              style={{ width: `${calculateProgress(value)}%` }}
+                            />
+                          </div>
+                        )}
+                        {category === 'certifications' ? (
+                          <>
+                            <p className={styles.certInfo}>
+                              <span className={styles.issuer}>{value.issuer}</span>
+                              <span className={styles.date}>{value.date}</span>
+                            </p>
+                            <p className={styles.certDescription}>{value.description}</p>
+                          </>
+                        ) : (
+                          <p>{value}</p>
+                        )}
+                      </div>
+                      <div className={styles.cardBack}>
+                        {category === 'certifications' ? (
+                          <div className={styles.certDetails}>
+                            <a href={value.link} target="_blank" rel="noopener noreferrer" 
+                               className={styles.certLink}>
+                              View Certificate →
+                            </a>
+                          </div>
+                        ) : category === 'academic' ? (
+                          <div className={styles.academicDetails}>
+                            <div className={styles.progressIndicator}>
+                              {calculateProgress(value)}%
+                            </div>
+                          </div>
+                        ) : (
+                          <div className={styles.awardDetails}>
+                            <span>{value}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Achievements;
