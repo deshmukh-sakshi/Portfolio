@@ -13,15 +13,22 @@ const Achievements = () => {
         name: 'Cisco Packet Tracer',
         date: '2024',
         issuer: 'Cisco',
-        link: 'https://cisco.com',
+        link: 'https://drive.google.com/file/d/15EROeMmgRTI4AJupP1qudilDwe7Wd2o7/view?usp=drive_link',
         description: 'Network simulation and visualization tool certification'
       },
-      'Gen AI': {
-        name: 'Google Gen AI',
+      'Software Development': {
+        name: 'Software Development',
         date: '2024',
-        issuer: 'Google',
-        link: 'https://google.com',
-        description: 'Generative AI and machine learning fundamentals'
+        issuer: 'LinkedIn',
+        link: 'https://drive.google.com/file/d/1l0bEtaICcX8duGcxODSdz7J8S5NeA8Jm/view?usp=sharing',
+        description: 'Software Development Fundamentals'
+      },
+      'Python Programming': {
+        name: 'Python Programming',
+        date: '2023',
+        issuer: 'Coursera',
+        link: 'https://drive.google.com/file/d/1dIJi0zuSUMMAOhPo0SWRGTmPwSmhPQ9S/view?usp=sharing',
+        description: 'Advanced Python programming and application development'
       },
       'Linux Fundamentals': {
         name: 'Linux Fundamentals',
@@ -37,13 +44,6 @@ const Achievements = () => {
         link: 'https://udemy.com',
         description: 'Full-stack web development with modern technologies'
       },
-      'Python Programming': {
-        name: 'Python Programming',
-        date: '2023',
-        issuer: 'Coursera',
-        link: 'https://coursera.org',
-        description: 'Advanced Python programming and application development'
-      }
     },
     awards: {
       'LPF Scholarship': '(2023)',
