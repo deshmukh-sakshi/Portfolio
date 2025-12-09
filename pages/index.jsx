@@ -9,7 +9,7 @@ export default function HomePage() {
       <div className={styles.container}>
         <div className={styles.background}>
           <h1>Passionate</h1>
-          <h1>Enthusiast</h1>
+          <h1>Developer</h1>
         </div>
         <div className={styles.foreground}>
           <div className={styles.content}>
@@ -18,40 +18,53 @@ export default function HomePage() {
             <div className={styles.cardContainer}>
               <div className={styles.card}>
                 <div className={styles.content}>
-                  <h4>Skill Set</h4>
+                  <h4>Technical Skills</h4>
                   <div className={styles.tags}>
-                    <span key='Research' className='Research'>
-                      Data Visualization
+                    <span key='Java' className='Java'>
+                      Java
                     </span>
-                    <span key='Computer-Vision' className='Computer-Vision'>
-                      Git and Github Version Control
-                    </span>
-                    <span key='MIM' className='MIM'>
-                      Data Structures & Algorithms
-                    </span>
-                    <span key='LLMs' className='LLMs'>
-                      HTML
-                    </span>
-                    <span key='PyTorch' className='PyTorch'>
-                      CSS
-                    </span>
-                    <span key='GenAI' className='GenAI'>
-                      Generative AI
+                    <span key='Python' className='Python'>
+                      Python
                     </span>
                     <span key='Tensorflow' className='Tensorflow'>
                       C++
                     </span>
-                    <span key='Apache-Spark' className='Apache-Spark'>
-                      Python
-                    </span>
                     <span key='SQL' className='SQL'>
-                      Javascript
+                      JavaScript
                     </span>
-
                     <span key='Software-Design' className='Software-Design'>
-                      Software-Engineering
+                      Spring Boot
                     </span>
-              
+                    <span key='Research' className='Research'>
+                      React.js
+                    </span>
+                    <span key='Apache-Spark' className='Apache-Spark'>
+                      Node.js
+                    </span>
+                    <span key='MySQL' className='MySQL'>
+                      PostgreSQL
+                    </span>
+                    <span key='Deep-Learning' className='Deep-Learning'>
+                      MongoDB
+                    </span>
+                    <span key='GenAI' className='GenAI'>
+                      Azure OpenAI
+                    </span>
+                    <span key='LLMs' className='LLMs'>
+                      Keras
+                    </span>
+                    <span key='MIM' className='MIM'>
+                      DSA
+                    </span>
+                    <span key='MLOps' className='MLOps'>
+                      Docker
+                    </span>
+                    <span key='AWS' className='AWS'>
+                      AWS
+                    </span>
+                    <span key='Computer-Vision' className='Computer-Vision'>
+                      Git
+                    </span>
                   </div>
                 </div>
               </div>
@@ -59,21 +72,16 @@ export default function HomePage() {
             <Link href="/resume">
               <button className={styles.button}>Resume</button>
             </Link>
-            {/* <Link href="/projects">
+            <Link href="/projects">
               <button className={styles.button}>View Projects</button>
-            </Link> */}
+            </Link>
             <Link href="/contact">
               <button className={styles.outlined}>Contact</button>
             </Link>
-           
-            
-          </div>
-          {/* <Illustration className={styles.illustration} /> */}
-
-
           </div>
         </div>
-     </>
+      </div>
+    </>
   );
 }
 
