@@ -4,9 +4,9 @@ import styles from '../styles/AchievementsPage.module.css';
 const Achievements = () => {
   const [data] = useState({
     academic: {
-      'Current CGPA': '9.45/10',
-      'B.Tech': 'Computer Engineering',
-      'Class X': '95% | Nirmal International School'
+      'Current CGPA': '9.28/10',
+      'B.Tech': 'Computer Science & Engineering | MIT AOE',
+      'Honors': 'LPF Scholarship for Academic Excellence (2023)'
     },
     certifications: {
       'Cisco Packet Tracer': {
@@ -46,7 +46,8 @@ const Achievements = () => {
       },
     },
     awards: {
-      'LPF Scholarship': '(2023)',
+      'Code Without Barriers Hackathon': '🥇 1st Place - Microsoft & iNextLabs (2025)',
+      'LPF Scholarship': 'Academic Excellence (2023)',
       'Maths Olympiad': 'Gold Medal (2018)',
       'Nirmal Expo [Project Exhibition]': 'Best Project Award (2019)',
       'Essay Writing Competition Winner': '(2021)',
